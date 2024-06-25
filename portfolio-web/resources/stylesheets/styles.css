@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+}
+
+.header{
+    background-color: aqua;
+    margin: 0px;
+    display: flex;
+    padding: 0.5em;
+    align-items: center;
+
+}
+
+.wrapper{
+    height: 100vh;
+    display: flex;
+}
+
+.menu{
+    background-color: red;
+    width: 15em;
+    border: 1px black;
+}
+
+.menuItem{
+    background-color: aliceblue;
+    text-align: center;
+    height: 4em;
+    padding: 1em;
+}
+
+.content{
+    background-color: beige;
+    width: 100%;
+}
