@@ -1,14 +1,26 @@
 body{
     margin: 0;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .header{
-    background-color: aqua;
-    margin: 0px;
+    background-color: aliceblue;
     display: flex;
     padding: 0.5em;
+    padding-left: 2em;
     align-items: center;
     border:1px solid black;
+
+    >h1{
+        padding-right:0.5em;
+        font-weight: 300;
+    }
+
+    >h3{
+        font-weight: 400;
+        color: #434343;
+
+    }
 }
 
 .wrapper{
@@ -17,11 +29,13 @@ body{
 }
 
 .menu{
-    background-color: red;
+    background-color: aliceblue;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     width: 15em;
-    border: 1px black;
-    border:1px solid black;
-    border-top: none;
+    padding-top:10em;
 
 }
 
@@ -29,19 +43,85 @@ body{
     background-color: aliceblue;
     text-align: center;
     height: 4em;
-    padding: 2em; 
+    padding: 0.5em; 
+    width: inherit;
 
-    >a{
+    >a {
         text-decoration: none;
+        position: relative;
+        display: inline-block;
+        color: #434343;
+        
     }
 
-    >a:hover{
-        color:red;
+    >a.selectedPage{
+        cursor: default;
+        font-weight: bold;
+        color:black;
     }
+    > a.selectedPage::after {
+        /* Disable animation for selected page */
+        opacity: 0; /* or whatever final state you want */
+        transform: translate3d(0, 0.2em, 0); /* ensure it matches the end state */
+        transition: none; /* disable transition */
+    }
+
+    > a.selectedPage:hover::after,
+    > a.selectedPage:focus::after {
+        opacity: 0;
+        transform: translate3d(0, 0.2em, 0);
+    }
+
+    
+    > a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.15em;
+        background-color: lightskyblue;
+        opacity: 0;
+        transition: opacity 300ms, transform 300ms;
+    }
+    
+    > a:hover::after,
+    > a:focus::after {
+        opacity: 1;
+        transform: translate3d(0, 0.2em, 0);
+    }
+
 }
 
+.arrow{
+    width: 1em;
+    height: 1em;
+}
+
+.selectMenuItem{
+    text-decoration: none;
+}
 
 .content{
-    background-color: beige;
+    background-color: aliceblue;
+    border:1px solid black;
+    border-top: none;
     width: 100%;
+    padding: 3em 6em;
+    
+         
+}
+
+.content-text{
+    padding: 3em;
+    >h1{
+        font-size: 4.5em;
+        text-decoration: underline;
+        text-decoration-color: lightskyblue;
+        margin-bottom:0;
+    }
+
+    >h3{
+        font-weight: 300;
+    }
 }
