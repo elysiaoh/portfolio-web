@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: "JetBrains Mono", monospace;
+    background-color: aliceblue;
 }
 
 .header{
@@ -10,7 +11,6 @@ body{
     padding-left: 2em;
     align-items: center;
     border:1px solid black;
-
     >h1{
         padding-right:0.5em;
         font-weight: 300;
@@ -41,6 +41,9 @@ body{
     justify-content: flex-start;
     width: 15em;
     padding-top:10em;
+    height:100vh;
+    border:1px solid black;
+    border-top: none;
 
 }
 
@@ -48,7 +51,7 @@ body{
     background-color: aliceblue;
     text-align: center;
     height: 4em;
-    padding: 0.5em; 
+    padding-bottom: 2.5em;
     width: inherit;
 
     >a {
@@ -107,15 +110,37 @@ body{
     text-decoration: none;
 }
 
+.socialItem{
+    display: inline-block;
+
+}
+.fa {
+    padding:1em;
+    width: 1em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 75%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  .fa-github {
+    background: rgb(87, 87, 188);
+    color: white;
+  }
+
 .content{
     background-color: aliceblue;
-    border:1px solid black;
-    border-top: none;
     width: 100%;
     height: 100vh;
     padding: 3em 6em;
-    
-         
 }
 
 .content-text{
@@ -131,3 +156,26 @@ body{
         font-weight: 300;
     }
 }
+
+.about-text{
+    
+}
+
+
+.hvr-float {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
